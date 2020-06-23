@@ -38,7 +38,7 @@
                 </div>
                 <form action="#" method="get">
                     <input type="search" name="caviarSearch" id="search"
-                           placeholder="Search Your Desire Destinations or Events">
+                           placeholder="Pesquise por qualquer coisa...">
                     <input type="submit" class="d-none" value="submit">
                 </form>
             </div>
@@ -52,7 +52,7 @@
         <div class="row h-100">
             <div class="col-12 h-100">
                 <nav class="h-100 navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="index.html"><img src="{{asset("img/core-img/logo.png")}}" alt=""></a>
+                    <a class="navbar-brand" href="{{route('index')}}"><img src="{{asset("img/core-img/logo.png")}}" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ipvNav"
                             aria-controls="ipvNav" aria-expanded="false" aria-label="Toggle navigation"><span
                             class="fa fa-bars"></span></button>
@@ -164,12 +164,12 @@
                                 </select>
                                 <select disabled class="custom-select">
                                     <option selected>Preço</option>
-                                    <option value="1">$100 - $499</option>
-                                    <option value="2">$500 - $999</option>
-                                    <option value="3">$1000 - $4999</option>
+                                    <option value="1">€100 - $499</option>
+                                    <option value="2">€500 - $999</option>
+                                    <option value="3">€1000 - $4999</option>
                                 </select>
                                 <button disabled type="submit" class="btn ipv-btn"><i class="fa fa-search pr-2"
-                                                                                        aria-hidden="true"></i> Search
+                                                                                        aria-hidden="true"></i> Pesquisar
                                 </button>
                             </form>
                         </div>
