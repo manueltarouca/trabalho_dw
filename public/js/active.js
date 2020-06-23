@@ -31,12 +31,12 @@
     $('#search-btn, #closeBtn').on('click', function () {
         $('body').toggleClass('search-form-on');
     });
-    
+
     // matchHeight Active Code
     if ($.fn.matchHeight) {
         $('.equal-height').matchHeight();
     }
-    
+
     // ScrollUp Active Code
     if ($.fn.scrollUp) {
         $.scrollUp({

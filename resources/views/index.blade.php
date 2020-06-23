@@ -25,11 +25,11 @@
 <body>
 <!-- Preloader -->
 <div id="preloader">
-    <div class="dorne-load"></div>
+    <div class="ipv-load"></div>
 </div>
 
 <!-- ***** Search Form Area ***** -->
-<div class="dorne-search-form d-flex align-items-center">
+<div class="ipv-search-form d-flex align-items-center">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -53,17 +53,19 @@
             <div class="col-12 h-100">
                 <nav class="h-100 navbar navbar-expand-lg">
                     <a class="navbar-brand" href="index.html"><img src="{{asset("img/core-img/logo.png")}}" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav"
-                            aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ipvNav"
+                            aria-controls="ipvNav" aria-expanded="false" aria-label="Toggle navigation"><span
                             class="fa fa-bars"></span></button>
                     <!-- Nav -->
-                    <div class="collapse navbar-collapse" id="dorneNav">
-                        <ul class="navbar-nav mr-auto" id="dorneMenu">
+                    <div class="collapse navbar-collapse" id="ipvNav">
+                        <ul class="navbar-nav mr-auto" id="ipvMenu">
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{route('index')}}">Home <span
+                                        class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('index')}}">Explorar <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{route('index')}}">Explorar <span
+                                        class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
@@ -82,16 +84,16 @@
                             </li>
                         </ul>
                         <!-- Search btn -->
-                        <div class="dorne-search-btn">
+                        <div class="ipv-search-btn">
                             <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i>Procurar</a>
                         </div>
                         <!-- Signin btn -->
-                        <div class="dorne-signin-btn">
+                        <div class="ipv-signin-btn">
                             <a href="#">Login</a>
                         </div>
                         <!-- Add listings btn -->
-                        <div class="dorne-add-listings-btn">
-                            <a href="#" class="btn dorne-btn">+ Adicionar Establecimento</a>
+                        <div class="ipv-add-listings-btn">
+                            <a href="#" class="btn ipv-btn">+ Adicionar Establecimento</a>
                         </div>
                     </div>
                 </nav>
@@ -102,7 +104,8 @@
 <!-- ***** Header Area End ***** -->
 
 <!-- ***** Welcome Area Start ***** -->
-<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url({{asset("img/bg-img/hero-1.jpg")}});">
+<section class="ipv-welcome-area bg-img bg-overlay"
+         style="background-image: url({{asset("img/bg-img/hero-1.jpg")}});">
     <div class="container h-100">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 col-md-10">
@@ -117,22 +120,15 @@
                         <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places"
                            role="tab" aria-controls="nav-places" aria-selected="true">&nbsp;&nbsp;Establecimentos&nbsp;&nbsp;</a>
                         <a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab"
-                           aria-controls="nav-events" aria-selected="false">&nbsp;&nbsp;Eventos (em breve)&nbsp;&nbsp;</a>
+                           aria-controls="nav-events" aria-selected="false">&nbsp;&nbsp;Eventos (em
+                            breve)&nbsp;&nbsp;</a>
                     </div>
                     <!-- Tabs Content -->
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-places" role="tabpanel"
                              aria-labelledby="nav-places-tab">
-                            <h6>What are you looking for?</h6>
+                            <h6>O que procura?</h6>
                             <form action="#" method="get">
-                                <!-- <select class="custom-select">
-                                    <option selected>Your Destinations</option>
-                                    <option value="1">New York</option>
-                                    <option value="2">Latvia</option>
-                                    <option value="3">Dhaka</option>
-                                    <option value="4">Melbourne</option>
-                                    <option value="5">London</option>
-                                </select> -->
                                 <select class="custom-select">
                                     <option selected>Todas as Categorias</option>
                                     <option value="1">Hotéis</option>
@@ -141,38 +137,39 @@
                                     <option value="3">Beleza & Spa</option>
                                     <option value="3">Cinema</option>
                                 </select>
-                                <input class="custom-input"  style="width: 60%;" type="search" name="caviarSearch" id="search"
+                                <input class="custom-input" style="width: 60%;" type="search" name="caviarSearch"
+                                       id="search"
                                        placeholder="Procure pelo nome do establecimento">
-                                <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2"
-                                                                               aria-hidden="true"></i> Search
+                                <button type="submit" class="btn ipv-btn"><i class="fa fa-search pr-2"
+                                                                               aria-hidden="true"></i> Pesquisar
                                 </button>
                             </form>
                         </div>
                         <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
-                            <h6>What are you looking for?</h6>
+                            <h6>O que procura?</h6>
                             <form action="#" method="get">
-                                <select class="custom-select">
-                                    <option selected>Your Destinations</option>
+                                <select disabled class="custom-select">
+                                    <option selected>Local</option>
                                     <option value="1">New York</option>
                                     <option value="2">Latvia</option>
                                     <option value="3">Dhaka</option>
                                     <option value="4">Melbourne</option>
                                     <option value="5">London</option>
                                 </select>
-                                <select class="custom-select">
-                                    <option selected>All Catagories</option>
+                                <select disabled class="custom-select">
+                                    <option selected>Todas as Categorias</option>
                                     <option value="1">Catagories 1</option>
                                     <option value="2">Catagories 2</option>
                                     <option value="3">Catagories 3</option>
                                 </select>
-                                <select class="custom-select">
-                                    <option selected>Price Range</option>
+                                <select disabled class="custom-select">
+                                    <option selected>Preço</option>
                                     <option value="1">$100 - $499</option>
                                     <option value="2">$500 - $999</option>
                                     <option value="3">$1000 - $4999</option>
                                 </select>
-                                <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2"
-                                                                               aria-hidden="true"></i> Search
+                                <button disabled type="submit" class="btn ipv-btn"><i class="fa fa-search pr-2"
+                                                                                        aria-hidden="true"></i> Search
                                 </button>
                             </form>
                         </div>
@@ -190,7 +187,8 @@
         <div class="social-btns">
             <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
             <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-haspopup="true"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"
+                                                                    aria-haspopup="true"></i></a>
             <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
         </div>
     </div>
@@ -198,7 +196,7 @@
 <!-- ***** Welcome Area End ***** -->
 
 <!-- ***** Catagory Area Start ***** -->
-<section class="dorne-catagory-area">
+<section class="ipv-catagory-area">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -268,15 +266,16 @@
 <!-- ***** Catagory Area End ***** -->
 
 <!-- ***** About Area Start ***** -->
-<section class="dorne-about-area section-padding-0-100">
+<section class="ipv-about-area section-padding-0-100">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="about-content text-center">
-                    <h2>Discover your city with <br><span>Dorne</span></h2>
-                    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce
-                        quis tempus elit. Sed efficitur tortor neque, vitae aliquet urna varius sit amet. Ut rhoncus,
-                        nunc nec tincidunt volutpat, ex libero.</p>
+                    <h2>Explore o seu destino em seguraça com <br><span>Travel Safe</span></h2>
+                    <p>Ao utilizar a nossa plataforma poderá aceder a <i>reviews</i> relativas à higiene e segurança dos espaços
+                        que o utilizador pretenda frequentar.
+                        As reviews são disponibilizadas de forma pública para que todos tenham acesso.<br>
+                        <strong>A informação aqui presente é um produto de uma contribuição comunitária.</strong></p>
                 </div>
             </div>
         </div>
@@ -285,15 +284,15 @@
 <!-- ***** About Area End ***** -->
 
 <!-- ***** Editor Pick Area Start ***** -->
-<section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100"
+<section class="ipv-editors-pick-area bg-img bg-overlay-9 section-padding-100"
          style="background-image: url({{asset("img/bg-img/hero-2.jpg")}});">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading text-center">
                     <span></span>
-                    <h4>Cities you must see</h4>
-                    <p>Editor’s pick</p>
+                    <h4>Cidades que precisa de visitar</h4>
+                    <p>A mais populares</p>
                 </div>
             </div>
         </div>
@@ -301,11 +300,11 @@
         <div class="row">
             <div class="col-12 col-lg-6">
                 <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="{{asset("img/bg-img/editor-1.jpg")}}" alt="">
+                    <img src="{{asset("img/bg-img/porto.jpg")}}" alt="">
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
-                            <a href="#">New York</a>
-                            <a href="#">1643 Destinations</a>
+                            <a href="#">Porto</a>
+                            <a href="#">1643 establecimentos</a>
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -315,10 +314,10 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.4s">
-                    <img src="{{asset("img/bg-img/editor-2.jpg")}}" alt="">
+                    <img src="{{asset("img/bg-img/lisboa.jpg")}}" alt="">
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
-                            <a href="#">Barcelona</a>
+                            <a href="#">Lisboa</a>
                             <a href="#">943 Destinations</a>
                         </div>
                         <div class="add-more">
@@ -327,10 +326,10 @@
                     </div>
                 </div>
                 <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="{{asset("img/bg-img/editor-3.jpg")}}" alt="">
+                    <img src="{{asset("img/bg-img/viseu.jpg")}}" alt="">
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
-                            <a href="#">paris</a>
+                            <a href="#">Viseu</a>
                             <a href="#">243 Destinations</a>
                         </div>
                         <div class="add-more">
@@ -345,14 +344,14 @@
 <!-- ***** Editor Pick Area End ***** -->
 
 <!-- ***** Features Destinations Area Start ***** -->
-<section class="dorne-features-destinations-area">
+<section class="ipv-features-destinations-area">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading dark text-center">
                     <span></span>
-                    <h4>Featured destinations</h4>
-                    <p>Editor’s pick</p>
+                    <h4>Establecimentos em destaque</h4>
+                    <p>As nossas sugestões</p>
                 </div>
             </div>
         </div>
@@ -365,15 +364,15 @@
                         <img src="{{asset("img/bg-img/feature-1.jpg")}}" alt="">
                         <!-- Price -->
                         <div class="price-start">
-                            <p>FROM $59/night</p>
+                            <p>Hotéis</p>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Ibiza</h5>
-                                <p>Party</p>
+                                <h5>Four Seasons Hotel Ritz Lisbon</h5>
+                                <p>Lisboa</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -382,15 +381,15 @@
                         <img src="{{asset("img/bg-img/feature-2.jpg")}}" alt="">
                         <!-- Price -->
                         <div class="price-start">
-                            <p>FROM $59/night</p>
+                            <p>Restaurantes</p>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Paris</h5>
-                                <p>Luxury</p>
+                                <h5>Santa Luzia<br>&nbsp;</h5>
+                                <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -399,15 +398,15 @@
                         <img src="{{asset("img/bg-img/feature-3.jpg")}}" alt="">
                         <!-- Price -->
                         <div class="price-start">
-                            <p>FROM $59/night</p>
+                            <p>Lojas</p>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Lake Como</h5>
-                                <p>Spectacular</p>
+                                <h5>Livraria Bertrand<br>&nbsp;</h5>
+                                <p>Porto</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -416,15 +415,15 @@
                         <img src="{{asset("img/bg-img/feature-4.jpg")}}" alt="">
                         <!-- Price -->
                         <div class="price-start">
-                            <p>FROM $59/night</p>
+                            <p>Beleza & Spa</p>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Greece</h5>
-                                <p>Sunny</p>
+                                <h5>Six Senses Douro Valley</h5>
+                                <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -433,15 +432,15 @@
                         <img src="{{asset("img/bg-img/feature-5.jpg")}}" alt="">
                         <!-- Price -->
                         <div class="price-start">
-                            <p>FROM $59/night</p>
+                            <p>Cinema</p>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Norway</h5>
-                                <p>All Year round</p>
+                                <h5>Cinema NOS Palácio do Gelo</h5>
+                                <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -453,14 +452,14 @@
 <!-- ***** Features Destinations Area End ***** -->
 
 <!-- ***** Features Restaurant Area Start ***** -->
-<section class="dorne-features-restaurant-area bg-default">
+<section class="ipv-features-restaurant-area bg-default">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading text-center">
                     <span></span>
-                    <h4>Featured Restaurants</h4>
-                    <p>Editor’s pick</p>
+                    <h4>Restaurantes em destaque</h4>
+                    <p>A categoria mais popular</p>
                 </div>
             </div>
         </div>
@@ -565,8 +564,10 @@
 </section>
 <!-- ***** Features Restaurant Area End ***** -->
 
+
 <!-- ***** Features Events Area Start ***** -->
-<section class="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50"
+<!--
+<section class="ipv-features-events-area bg-img bg-overlay-9 section-padding-100-50"
          style="background-image: url({{asset("img/bg-img/hero-3.jpg")}})">
     <div class="container">
         <div class="row">
@@ -702,20 +703,20 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ***** Features Events Area End ***** -->
 
 <!-- ***** Clients Area Start ***** -->
-<div class="dorne-clients-area section-padding-100">
+<div class="ipv-clients-area section-padding-100" style="background-image: linear-gradient(#341a79, white);">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="clients-logo d-md-flex align-items-center justify-content-around">
-                    <img src="{{asset("img/clients-img/1.png")}}" alt="">
-                    <img src="{{asset("img/clients-img/2.png")}}" alt="">
-                    <img src="{{asset("img/clients-img/3.png")}}" alt="">
-                    <img src="{{asset("img/clients-img/4.png")}}" alt="">
-                    <img src="{{asset("img/clients-img/5.png")}}" alt="">
+                    <img src="{{asset("img/clients-img/1.png")}}" alt="" width="100" height="50">
+                    <img src="{{asset("img/clients-img/2.png")}}" alt="" width="100" height="50">
+                    <img src="{{asset("img/clients-img/3.png")}}" alt="" width="100" height="50">
+                    <img src="{{asset("img/clients-img/4.png")}}" alt="" width="100" height="50">
+                    <img src="{{asset("img/clients-img/5.png")}}" alt="" width="100" height="50">
                 </div>
             </div>
         </div>
@@ -724,26 +725,25 @@
 <!-- ***** Clients Area End ***** -->
 
 <!-- ****** Footer Area Start ****** -->
-<footer class="dorne-footer-area">
+<footer class="ipv-footer-area">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-md-flex align-items-center justify-content-between">
                 <div class="footer-text">
                     <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear().toString());</script>
-                        All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                            aria-hidden="true"></i> by <a
-                            href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Prova de conceito | <script>document.write(new Date().getFullYear().toString());</script>
+                        DW MSTIO | Manuel Martins & David Mota
                     </p>
                 </div>
                 <div class="footer-social-btns">
-                    <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                    <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                    <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"
+                                                                           aria-haspopup="true"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"
+                                                                      aria-haspopup="true"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"
+                                                                            aria-haspopup="true"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"
+                                                                           aria-haspopup="true"></i></a>
                 </div>
             </div>
         </div>

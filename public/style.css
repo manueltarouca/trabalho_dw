@@ -29,7 +29,7 @@
     z-index: 99999;
 }
 
-.dorne-load {
+.ipv-load {
     width: 60px;
     height: 60px;
     background-color: transparent;
@@ -44,11 +44,11 @@
     left: 50%;
     border-radius: 50%;
     overflow: hidden;
-    -webkit-animation: 4000ms linear 0s normal none infinite running dorneload;
-            animation: 4000ms linear 0s normal none infinite running dorneload;
+    -webkit-animation: 4000ms linear 0s normal none infinite running ipvload;
+            animation: 4000ms linear 0s normal none infinite running ipvload;
 }
 
-@-webkit-keyframes dorneload {
+@-webkit-keyframes ipvload {
     0% {
         -webkit-transform: rotate(0);
                 transform: rotate(0);
@@ -59,7 +59,7 @@
     }
 }
 
-@keyframes dorneload {
+@keyframes ipvload {
     0% {
         -webkit-transform: rotate(0);
                 transform: rotate(0);
@@ -242,7 +242,7 @@ li {
     height: 800px!important;
 }
 
-.dorne-table {
+.ipv-table {
     display: table;
     height: 100%;
     left: 0;
@@ -252,7 +252,7 @@ li {
     z-index: 2;
 }
 
-.dorne-table-cell {
+.ipv-table-cell {
     display: table-cell;
     vertical-align: middle;
 }
@@ -346,7 +346,7 @@ li {
     background-color: #341a79;
 }
 
-.dorne-btn {
+.ipv-btn {
     min-width: 180px;
     height: 52px;
     background-color: #7643ea;
@@ -360,8 +360,8 @@ li {
             transition-duration: 500ms;
 }
 
-.dorne-btn:hover,
-.dorne-btn:focus {
+.ipv-btn:hover,
+.ipv-btn:focus {
     color: #fff;
     background-color: #5d25dd;
     font-weight: 600;
@@ -369,7 +369,7 @@ li {
 
 /* Search Area CSS */
 
-.dorne-search-form {
+.ipv-search-form {
     width: 100%;
     position: fixed;
     z-index: 99999;
@@ -382,20 +382,20 @@ li {
     overflow-x: hidden;
 }
 
-.search-form-on .dorne-search-form {
+.search-form-on .ipv-search-form {
     top: 0;
 }
 
-.sticky .dorne-search-form {
+.sticky .ipv-search-form {
     height: 80px;
 }
 
-.dorne-search-form form {
+.ipv-search-form form {
     position: relative;
     z-index: 1;
 }
 
-.dorne-search-form form input {
+.ipv-search-form form input {
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
@@ -482,15 +482,15 @@ li {
     color: #7643ea;
 }
 
-.dorne-search-btn > a,
-.dorne-signin-btn > a {
+.ipv-search-btn > a,
+.ipv-signin-btn > a {
     color: #fff;
     display: inline-block;
     margin-right: 40px;
     font-size: 15px;
 }
 
-.dorne-search-btn > a i {
+.ipv-search-btn > a i {
     padding-right: 10px;
 }
 
@@ -514,7 +514,7 @@ li {
 
 /* Welcome Area CSS */
 
-.dorne-welcome-area {
+.ipv-welcome-area {
     width: 100%;
     height: 945px;
     position: relative;
@@ -645,7 +645,7 @@ li {
 
 /* Catagory Area CSS */
 
-.dorne-catagory-area {
+.ipv-catagory-area {
     position: relative;
     z-index: 9;
 }
@@ -698,7 +698,7 @@ li {
 
 /* Editor's Pick Area CSS */
 
-.dorne-editors-pick-area {
+.ipv-editors-pick-area {
     position: relative;
     z-index: 1;
 }
@@ -743,8 +743,8 @@ li {
 
 /* Features Area CSS */
 
-.dorne-features-destinations-area,
-.dorne-features-restaurant-area {
+.ipv-features-destinations-area,
+.ipv-features-restaurant-area {
     padding: 100px 35px;
     position: relative;
     z-index: 1;
@@ -958,7 +958,7 @@ li {
 
 /* Footer Area CSS */
 
-.dorne-footer-area {
+.ipv-footer-area {
     padding: 50px 35px;
     border-top: 1px solid #bec0cc;
 }
@@ -993,7 +993,7 @@ li {
 }
 
 .contact-form-area,
-.dorne-map-area {
+.ipv-map-area {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;

@@ -5,8 +5,8 @@
     .navbar-brand {
         margin-right: 30px;
     }
-    .dorne-search-btn > a,
-    .dorne-signin-btn > a {
+    .ipv-search-btn > a,
+    .ipv-signin-btn > a {
         margin-right: 15px;
         font-size: 14px;
     }
@@ -55,14 +55,14 @@
     .sticky .navbar-toggler {
         margin: 17px 0
     }
-    #dorneNav {
+    #ipvNav {
         padding: 30px;
         background-color: #341a79;
         box-shadow: 1px 9px 10px rgba(255, 255, 255, 0.15);
         border-radius: 0 0 3px 3px
     }
-    .dorne-search-btn > a,
-    .dorne-signin-btn > a {
+    .ipv-search-btn > a,
+    .ipv-signin-btn > a {
         margin-right: 0;
         margin-left: 15px;
         padding: 10px 0;
@@ -80,7 +80,7 @@
         padding: 0 10px;
         margin-right: 5px;
     }
-    .dorne-btn {
+    .ipv-btn {
         min-width: 150px;
     }
     .single-catagory-area .catagory-content h6 {
@@ -157,14 +157,14 @@
     .sticky .navbar-toggler {
         margin: 17px 0
     }
-    #dorneNav {
+    #ipvNav {
         padding: 15px;
         background-color: #341a79;
         box-shadow: 1px 9px 10px rgba(255, 255, 255, 0.15);
         border-radius: 0 0 3px 3px
     }
-    .dorne-search-btn > a,
-    .dorne-signin-btn > a {
+    .ipv-search-btn > a,
+    .ipv-signin-btn > a {
         margin-right: 0;
         margin-left: 15px;
         padding: 10px 0;
@@ -180,7 +180,7 @@
         padding: 0 10px;
         margin-right: 5px;
     }
-    .dorne-btn {
+    .ipv-btn {
         min-width: 150px;
     }
     .all-catagories {
@@ -220,8 +220,8 @@
         top: 15px;
         left: 15px;
     }
-    .dorne-features-destinations-area,
-    .dorne-features-restaurant-area {
+    .ipv-features-destinations-area,
+    .ipv-features-restaurant-area {
         padding: 100px 15px;
     }
     .single-catagory-area {
@@ -239,7 +239,7 @@
     .clients-logo > img {
         padding: 30px;
     }
-    .dorne-footer-area {
+    .ipv-footer-area {
         padding: 50px 0;
         text-align: center;
     }
@@ -289,7 +289,7 @@
         font-size: 12px;
     }
     .contact-form-area,
-    .dorne-map-area {
+    .ipv-map-area {
         -webkit-box-flex: 0;
             -ms-flex: 0 0 100%;
                 flex: 0 0 100%;
@@ -298,7 +298,7 @@
     .contact-form-area {
         padding: 50px 15px;
     }
-    .dorne-map-area {
+    .ipv-map-area {
         height: 500px;
     }
 }
