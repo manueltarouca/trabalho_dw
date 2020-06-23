@@ -67,7 +67,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings <i
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown<i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                     <a class="dropdown-item" href="index.html">Home</a>
@@ -83,15 +83,15 @@
                         </ul>
                         <!-- Search btn -->
                         <div class="dorne-search-btn">
-                            <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+                            <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i>Procurar</a>
                         </div>
                         <!-- Signin btn -->
                         <div class="dorne-signin-btn">
-                            <a href="#">Sign in or Register</a>
+                            <a href="#">Login</a>
                         </div>
                         <!-- Add listings btn -->
                         <div class="dorne-add-listings-btn">
-                            <a href="#" class="btn dorne-btn">+ Add Listings</a>
+                            <a href="#" class="btn dorne-btn">+ Adicionar Establecimento</a>
                         </div>
                     </div>
                 </nav>
@@ -107,17 +107,17 @@
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 col-md-10">
                 <div class="hero-content">
-                    <h2>Discover places near you</h2>
-                    <h4>This is the best guide of your city</h4>
+                    <h2>Visite sem preocupações</h2>
+                    <h4>Informe-se através da nossa plataforma</h4>
                 </div>
                 <!-- Hero Search Form -->
                 <div class="hero-search-form">
                     <!-- Tabs -->
                     <div class="nav nav-tabs" id="heroTab" role="tablist">
                         <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places"
-                           role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
+                           role="tab" aria-controls="nav-places" aria-selected="true">&nbsp;&nbsp;Establecimentos&nbsp;&nbsp;</a>
                         <a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab"
-                           aria-controls="nav-events" aria-selected="false">Events</a>
+                           aria-controls="nav-events" aria-selected="false">&nbsp;&nbsp;Eventos (em breve)&nbsp;&nbsp;</a>
                     </div>
                     <!-- Tabs Content -->
                     <div class="tab-content" id="nav-tabContent">
@@ -125,26 +125,24 @@
                              aria-labelledby="nav-places-tab">
                             <h6>What are you looking for?</h6>
                             <form action="#" method="get">
-                                <select class="custom-select">
+                                <!-- <select class="custom-select">
                                     <option selected>Your Destinations</option>
                                     <option value="1">New York</option>
                                     <option value="2">Latvia</option>
                                     <option value="3">Dhaka</option>
                                     <option value="4">Melbourne</option>
                                     <option value="5">London</option>
-                                </select>
+                                </select> -->
                                 <select class="custom-select">
-                                    <option selected>All Catagories</option>
-                                    <option value="1">Catagories 1</option>
-                                    <option value="2">Catagories 2</option>
-                                    <option value="3">Catagories 3</option>
+                                    <option selected>Todas as Categorias</option>
+                                    <option value="1">Hotéis</option>
+                                    <option value="2">Restaurantes</option>
+                                    <option value="3">Lojas</option>
+                                    <option value="3">Beleza & Spa</option>
+                                    <option value="3">Cinema</option>
                                 </select>
-                                <select class="custom-select">
-                                    <option selected>Price Range</option>
-                                    <option value="1">$100 - $499</option>
-                                    <option value="2">$500 - $999</option>
-                                    <option value="3">$1000 - $4999</option>
-                                </select>
+                                <input class="custom-input"  style="width: 60%;" type="search" name="caviarSearch" id="search"
+                                       placeholder="Procure pelo nome do establecimento">
                                 <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2"
                                                                                aria-hidden="true"></i> Search
                                 </button>
@@ -186,15 +184,14 @@
     <!-- Hero Social Btn -->
     <div class="hero-social-btn">
         <div class="social-title d-flex align-items-center">
-            <h6>Follow us on Social Media</h6>
+            <h6>Segue-nos nas redes socias!</h6>
             <span></span>
         </div>
         <div class="social-btns">
-            <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-            <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-haspopup="true"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
         </div>
     </div>
 </section>
@@ -213,7 +210,7 @@
                                 <div class="catagory-content">
                                     <img src="{{asset("img/core-img/icon-1.png")}}" alt="">
                                     <a href="#">
-                                        <h6>Hotels</h6>
+                                        <h6>Hotéis</h6>
                                     </a>
                                 </div>
                             </div>
@@ -224,7 +221,7 @@
                                 <div class="catagory-content">
                                     <img src="{{asset("img/core-img/icon-2.png")}}" alt="">
                                     <a href="#">
-                                        <h6>Restaurants</h6>
+                                        <h6>Restaurantes</h6>
                                     </a>
                                 </div>
                             </div>
@@ -235,7 +232,7 @@
                                 <div class="catagory-content">
                                     <img src="{{asset("img/core-img/icon-3.png")}}" alt="">
                                     <a href="#">
-                                        <h6>Shopping</h6>
+                                        <h6>Lojas</h6>
                                     </a>
                                 </div>
                             </div>
@@ -246,7 +243,7 @@
                                 <div class="catagory-content">
                                     <img src="{{asset("img/core-img/icon-4.png")}}" alt="">
                                     <a href="#">
-                                        <h6>Beauty &amp; Spa</h6>
+                                        <h6>Beleza &amp; Spa</h6>
                                     </a>
                                 </div>
                             </div>
