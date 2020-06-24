@@ -304,7 +304,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Porto</a>
-                            <a href="#">1643 establecimentos</a>
+                            <a href="#">{{rand(500,1000)}} establecimentos</a>
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -318,7 +318,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Lisboa</a>
-                            <a href="#">943 Destinations</a>
+                            <a href="#">{{rand(250,500)}} establecimentos</a>
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -330,7 +330,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Viseu</a>
-                            <a href="#">243 Destinations</a>
+                            <a href="#">{{rand(0,250)}} establecimentos</a>
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -472,13 +472,13 @@
                         <img src="{{asset("img/bg-img/feature-6.jpg")}}" alt="">
                         <!-- Rating & Map Area -->
                         <div class="ratings-map-area d-flex">
-                            <a href="#">8.5</a>
+                            <a href="#">4.9</a>
                             <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Martha’s bar</h5>
-                                <p>Manhathan</p>
+                                <h5>MUU Steakhouse</h5>
+                                <p>Porto</p>
                             </div>
                             <div class="feature-favourite">
                                 <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -490,13 +490,13 @@
                         <img src="{{asset("img/bg-img/feature-7.jpg")}}" alt="">
                         <!-- Rating & Map Area -->
                         <div class="ratings-map-area d-flex">
-                            <a href="#">9.5</a>
+                            <a href="#">4.8</a>
                             <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Delux Restaurant</h5>
-                                <p>Paris</p>
+                                <h5>Tapabento</h5>
+                                <p>Porto</p>
                             </div>
                             <div class="feature-favourite">
                                 <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -508,13 +508,13 @@
                         <img src="{{asset("img/bg-img/feature-8.jpg")}}" alt="">
                         <!-- Rating & Map Area -->
                         <div class="ratings-map-area d-flex">
-                            <a href="#">8.2</a>
+                            <a href="#">4.7</a>
                             <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Jim’s corner Pub</h5>
-                                <p>Madrid</p>
+                                <h5>Palace Restaurante</h5>
+                                <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
                                 <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -526,13 +526,13 @@
                         <img src="{{asset("img/bg-img/feature-9.jpg")}}" alt="">
                         <!-- Rating & Map Area -->
                         <div class="ratings-map-area d-flex">
-                            <a href="#">8.7</a>
+                            <a href="#">4.6</a>
                             <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>tower Risto bar</h5>
-                                <p>Sydney</p>
+                                <h5>Quinta da Magarenha</h5>
+                                <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
                                 <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -544,13 +544,13 @@
                         <img src="{{asset("img/bg-img/feature-10.jpg")}}" alt="">
                         <!-- Rating & Map Area -->
                         <div class="ratings-map-area d-flex">
-                            <a href="#">9.8</a>
+                            <a href="#">4.5</a>
                             <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Pizzeria venezia</h5>
-                                <p>Hong Kong</p>
+                                <h5>Ola Nepal</h5>
+                                <p>Lisboa</p>
                             </div>
                             <div class="feature-favourite">
                                 <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
