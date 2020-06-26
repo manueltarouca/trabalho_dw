@@ -17,10 +17,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', 'IndexController@index')->name('index');
+
+Route::get('/estabelecimento', 'IndexController@estabelecimento')->name('estabelecimento');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/restaurantes', 'IndexController@teste');

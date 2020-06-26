@@ -1,107 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
-    <title>Travel Safe - Know where you go</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="{{asset("img/core-img/favicon.ico")}}">
-
-    <!-- Core Stylesheet -->
-    <link href="{{asset("style.css")}}" rel="stylesheet">
-
-    <!-- Responsive CSS -->
-    <link href="{{asset("css/responsive/responsive.css")}}" rel="stylesheet">
-
-</head>
-
-<body>
-<!-- Preloader -->
-<div id="preloader">
-    <div class="ipv-load"></div>
-</div>
-
-<!-- ***** Search Form Area ***** -->
-<div class="ipv-search-form d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="search-close-btn" id="closeBtn">
-                    <i class="pe-7s-close-circle" aria-hidden="true"></i>
-                </div>
-                <form action="#" method="get">
-                    <input type="search" name="caviarSearch" id="search"
-                           placeholder="Pesquise por qualquer coisa...">
-                    <input type="submit" class="d-none" value="submit">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ***** Header Area Start ***** -->
-<header class="header_area" id="header">
-    <div class="container-fluid h-100">
-        <div class="row h-100">
-            <div class="col-12 h-100">
-                <nav class="h-100 navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="{{route('index')}}"><img src="{{asset("img/core-img/logo.png")}}" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ipvNav"
-                            aria-controls="ipvNav" aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="fa fa-bars"></span></button>
-                    <!-- Nav -->
-                    <div class="collapse navbar-collapse" id="ipvNav">
-                        <ul class="navbar-nav mr-auto" id="ipvMenu">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{route('index')}}">Home <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('index')}}">Explorar <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown<i
-                                        class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                    <a class="dropdown-item" href="index.html">Home</a>
-                                    <a class="dropdown-item" href="explore.html">Explore</a>
-                                    <a class="dropdown-item" href="listing.html">Listing</a>
-                                    <a class="dropdown-item" href="single-listing.html">Single Listing</a>
-                                    <a class="dropdown-item" href="contact.html">Contact</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contactos</a>
-                            </li>
-                        </ul>
-                        <!-- Search btn -->
-                        <div class="ipv-search-btn">
-                            <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i>Procurar</a>
-                        </div>
-                        <!-- Signin btn -->
-                        <div class="ipv-signin-btn">
-                            <a href="#">Login</a>
-                        </div>
-                        <!-- Add listings btn -->
-                        <div class="ipv-add-listings-btn">
-                            <a href="#" class="btn ipv-btn">+ Adicionar Establecimento</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- ***** Header Area End ***** -->
+@extends('layouts.header')
 
 <!-- ***** Welcome Area Start ***** -->
 <section class="ipv-welcome-area bg-img bg-overlay"
@@ -141,7 +38,7 @@
                                        id="search"
                                        placeholder="Procure pelo nome do establecimento">
                                 <button type="submit" class="btn ipv-btn"><i class="fa fa-search pr-2"
-                                                                               aria-hidden="true"></i> Pesquisar
+                                                                             aria-hidden="true"></i> Pesquisar
                                 </button>
                             </form>
                         </div>
@@ -169,7 +66,7 @@
                                     <option value="3">€1000 - $4999</option>
                                 </select>
                                 <button disabled type="submit" class="btn ipv-btn"><i class="fa fa-search pr-2"
-                                                                                        aria-hidden="true"></i> Pesquisar
+                                                                                      aria-hidden="true"></i> Pesquisar
                                 </button>
                             </form>
                         </div>
@@ -272,7 +169,8 @@
             <div class="col-12">
                 <div class="about-content text-center">
                     <h2>Explore o seu destino em seguraça com <br><span>Travel Safe</span></h2>
-                    <p>Ao utilizar a nossa plataforma poderá aceder a <i>reviews</i> relativas à higiene e segurança dos espaços
+                    <p>Ao utilizar a nossa plataforma poderá aceder a <i>reviews</i> relativas à higiene e segurança dos
+                        espaços
                         que o utilizador pretenda frequentar.
                         As reviews são disponibilizadas de forma pública para que todos tenham acesso.<br>
                         <strong>A informação aqui presente é um produto de uma contribuição comunitária.</strong></p>
@@ -467,96 +365,26 @@
         <div class="row">
             <div class="col-12">
                 <div class="features-slides owl-carousel">
+                @foreach($restaurantes as $restaurante)
                     <!-- Single Features Area -->
-                    <div class="single-features-area">
-                        <img src="{{asset("img/bg-img/feature-6.jpg")}}" alt="">
-                        <!-- Rating & Map Area -->
-                        <div class="ratings-map-area d-flex">
-                            <a href="#">4.9</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>MUU Steakhouse</h5>
-                                <p>Porto</p>
+                        <div class="single-features-area">
+                            <img src="{{asset($restaurante->imagem)}}" alt="">
+                            <!-- Rating & Map Area -->
+                            <div class="ratings-map-area d-flex">
+                                <a href="#">{{rand(4*10,5*10)/10}}</a>
+                                <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
                             </div>
-                            <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Features Area -->
-                    <div class="single-features-area">
-                        <img src="{{asset("img/bg-img/feature-7.jpg")}}" alt="">
-                        <!-- Rating & Map Area -->
-                        <div class="ratings-map-area d-flex">
-                            <a href="#">4.8</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Tapabento</h5>
-                                <p>Porto</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <h5>{{$restaurante->nome}}</h5>
+                                    <p>{{$restaurante->cidade_nome->nome}}</p>
+                                </div>
+                                <div class="feature-favourite">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Single Features Area -->
-                    <div class="single-features-area">
-                        <img src="{{asset("img/bg-img/feature-8.jpg")}}" alt="">
-                        <!-- Rating & Map Area -->
-                        <div class="ratings-map-area d-flex">
-                            <a href="#">4.7</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Palace Restaurante</h5>
-                                <p>Viseu</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Features Area -->
-                    <div class="single-features-area">
-                        <img src="{{asset("img/bg-img/feature-9.jpg")}}" alt="">
-                        <!-- Rating & Map Area -->
-                        <div class="ratings-map-area d-flex">
-                            <a href="#">4.6</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Quinta da Magarenha</h5>
-                                <p>Viseu</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Features Area -->
-                    <div class="single-features-area">
-                        <img src="{{asset("img/bg-img/feature-10.jpg")}}" alt="">
-                        <!-- Rating & Map Area -->
-                        <div class="ratings-map-area d-flex">
-                            <a href="#">4.5</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Ola Nepal</h5>
-                                <p>Lisboa</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -724,43 +552,4 @@
 </div>
 <!-- ***** Clients Area End ***** -->
 
-<!-- ****** Footer Area Start ****** -->
-<footer class="ipv-footer-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 d-md-flex align-items-center justify-content-between">
-                <div class="footer-text">
-                    <p>
-                        Prova de conceito | <script>document.write(new Date().getFullYear().toString());</script>
-                        DW MSTIO | Manuel Martins & David Mota
-                    </p>
-                </div>
-                <div class="footer-social-btns">
-                    <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"
-                                                                           aria-haspopup="true"></i></a>
-                    <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"
-                                                                      aria-haspopup="true"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"
-                                                                            aria-haspopup="true"></i></a>
-                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"
-                                                                           aria-haspopup="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- ****** Footer Area End ****** -->
-
-<!-- jQuery-2.2.4 js -->
-<script src="{{asset("js/jquery/jquery-2.2.4.min.js")}}"></script>
-<!-- Popper js -->
-<script src="{{asset("js/bootstrap/popper.min.js")}}"></script>
-<!-- Bootstrap-4 js -->
-<script src="{{asset("js/bootstrap/bootstrap.min.js")}}"></script>
-<!-- All Plugins js -->
-<script src="{{asset("js/others/plugins.js")}}"></script>
-<!-- Active JS -->
-<script src="{{asset("js/active.js")}}"></script>
-</body>
-
-</html>
+@extends('layouts.footer')
