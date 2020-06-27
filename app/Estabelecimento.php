@@ -17,6 +17,11 @@ class Estabelecimento extends Model
         return $this->hasOne('App\Cidade','id','cidade');
     }
 
+    public function reviews()
+    {
+        return $this->hasMany('App\Review','establecimento');
+    }
+
     public function user()
     {
         return $this->belongsTo('App\User','owner');

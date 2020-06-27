@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@include('layouts.header')
 
 <!-- ***** Welcome Area Start ***** -->
 <section class="ipv-welcome-area bg-img bg-overlay"
@@ -552,4 +552,4 @@
 </div>
 <!-- ***** Clients Area End ***** -->
 
-@extends('layouts.footer')
+@include('layouts.footer')

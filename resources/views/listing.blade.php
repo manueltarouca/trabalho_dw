@@ -1,15 +1,17 @@
-@extends('layouts.header')
+@include('layouts.header')
 
 <!-- ***** Breadcumb Area Start ***** -->
-<div class="breadcumb-area height-700 bg-img bg-overlay" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}})">
+<div class="breadcumb-area height-700 bg-img bg-overlay"
+     style="background-image: url({{asset($establecimento->imagem)}})">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="breadcumb-content">
                     <div class="map-ratings-review-area d-flex">
-                        <a href="#" class="d-flex align-items-center justify-content-center"><img src="{{asset('img/core-img/map.png')}}" alt=""></a>
-                        <a href="#">8.7</a>
-                        <a href="#">Write a review</a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><img
+                                src="{{asset('img/core-img/map.png')}}" alt=""></a>
+                        <a href="#">{{rand(4*10,5*10)/10}}</a>
+                        <a href="#write-review">Avalie este establecimento</a>
                     </div>
                 </div>
             </div>
@@ -27,23 +29,23 @@
                 <div class="single-listing-content">
 
                     <div class="listing-title">
-                        <h4>Burger House soho</h4>
-                        <h6>First Avenue no 83</h6>
+                        <h4>{{$establecimento->nome}}</h4>
+                        <h6>{{$establecimento->localizacao}}</h6>
                     </div>
 
                     <div class="single-listing-nav">
                         <nav>
                             <ul id="listingNav">
-                                <li class="active"><a href="#overview">Overview</a></li>
-                                <li><a href="#menu">Menu</a></li>
+                                <li class="active"><a href="#overview">Descrição</a></li>
                                 <li><a href="#review">Reviews</a></li>
-                                <li><a href="#lomap">Location on map</a></li>
+                                <li><a href="#lomap">Localização no map</a></li>
                             </ul>
                         </nav>
                     </div>
 
                     <div class="overview-content mt-50" id="overview">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta lorem blandit aliquam eget quis ipsum. Vivamus accumsan consequat ligula non volutpat. Sed mollis orci non cursus vestibulum. Pellentesque vitae est a augue laoreet venenatis sed eu felis. Sed cursus magna nec turpis ullamcorper, eget rutrum felis egestas. Nunc odio ex, fermentum efficitur nunc vitae, efficitur hendrerit diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta lorem blandit aliquam eget quis ipsum.</p>
+                        <p>{{$establecimento->descricao}}</p>
+                        <!--
                         <div class="row mt-5">
                             <div class="col-6">
                                 <label class="custom-control custom-checkbox mb-3">
@@ -102,107 +104,44 @@
                                 </label>
                             </div>
                         </div>
+                        -->
                     </div>
-
-                    <div class="listing-menu-area mt-100" id="menu">
-                        <h4>Menu</h4>
-                        <!-- Single Listing Menu -->
-                        <div class="single-listing-menu d-flex justify-content-between">
-                            <!-- Listing Menu Title -->
-                            <div class="listing-menu-title">
-                                <h6>Classic Burger</h6>
-                                <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p>
-                            </div>
-                            <!-- Listing Menu Price -->
-                            <div class="listing-menu-price">
-                                <h6>$9,90</h6>
-                            </div>
-                        </div>
-                        <!-- Single Listing Menu -->
-                        <div class="single-listing-menu d-flex justify-content-between">
-                            <!-- Listing Menu Title -->
-                            <div class="listing-menu-title">
-                                <h6>House Special Burger</h6>
-                                <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p>
-                            </div>
-                            <!-- Listing Menu Price -->
-                            <div class="listing-menu-price">
-                                <h6>$9,90</h6>
-                            </div>
-                        </div>
-                        <!-- Single Listing Menu -->
-                        <div class="single-listing-menu d-flex justify-content-between">
-                            <!-- Listing Menu Title -->
-                            <div class="listing-menu-title">
-                                <h6>Classic Burger</h6>
-                                <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p>
-                            </div>
-                            <!-- Listing Menu Price -->
-                            <div class="listing-menu-price">
-                                <h6>$9,90</h6>
-                            </div>
-                        </div>
-                        <!-- Single Listing Menu -->
-                        <div class="single-listing-menu d-flex justify-content-between">
-                            <!-- Listing Menu Title -->
-                            <div class="listing-menu-title">
-                                <h6>House Special Burger</h6>
-                                <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p>
-                            </div>
-                            <!-- Listing Menu Price -->
-                            <div class="listing-menu-price">
-                                <h6>$9,90</h6>
-                            </div>
-                        </div>
-                        <a href="#" class="btn ipv-btn mt-50">+ See The Menu</a>
-                    </div>
-
                     <div class="listing-reviews-area mt-100" id="review">
                         <h4>reviews</h4>
-                        <div class="single-review-area">
-                            <div class="reviewer-meta d-flex align-items-center">
-                                <img src="{{asset('img/clients-img/1.jpg')}}" alt="">
-                                <div class="reviewer-content">
-                                    <div class="review-title-ratings d-flex justify-content-between">
-                                        <h5>“The best Burger in town”</h5>
-                                        <div class="ratings">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
+                        @if($establecimento->reviews->count() == 0)
+                            <h6>Ainda não existe nenhuma <i>review</i>, seja o primeiro!</h6>
+                        @else
+                        @foreach($establecimento->reviews as $review)
+                            <div class="single-review-area">
+                                <div class="reviewer-meta d-flex align-items-center">
+                                    <img src="{{asset($review->user->imagem)}}" alt="">
+                                    <div class="reviewer-content">
+                                        <div class="review-title-ratings d-flex justify-content-between">
+                                            <h5>“{{$review->titulo}}”</h5>
+                                            <div class="ratings">
+                                                @for ($i = 0; $i < $review->classificacao; $i++)
+                                                    <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
+                                                @endfor
+                                                @for ($i = 0; $i < 5-$review->classificacao; $i++)
+                                                    <img src="{{asset('img/clients-img/star-unfill.png')}}" alt="">
+                                                @endfor
+                                            </div>
                                         </div>
+                                        <p>
+                                            {{$review->descricao}}
+                                            @for ($i = 0; $i < 100; $i++)
+                                                &nbsp;
+                                            @endfor
+                                        </p>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta lorem blandit aliquam eget quis ipsum. Vivamus accumsan consequat ligula non volutpat.</p>
+                                </div>
+                                <div class="reviewer-name">
+                                    <h6>{{$review->user->name}}</h6>
+                                    <p>{{$review->created_at}}</p>
                                 </div>
                             </div>
-                            <div class="reviewer-name">
-                                <h6>Christinne Smith</h6>
-                                <p>12 November 2017</p>
-                            </div>
-                        </div>
-                        <div class="single-review-area">
-                            <div class="reviewer-meta d-flex align-items-center">
-                                <img src="{{asset('img/clients-img/1.jpg')}}" alt="">
-                                <div class="reviewer-content">
-                                    <div class="review-title-ratings d-flex justify-content-between">
-                                        <h5>“Quality ingredients”</h5>
-                                        <div class="ratings">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                            <img src="{{asset('img/clients-img/star-unfill.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta lorem blandit aliquam eget quis ipsum. Vivamus accumsan consequat ligula non volutpat.</p>
-                                </div>
-                            </div>
-                            <div class="reviewer-name">
-                                <h6>Michael Brown</h6>
-                                <p>12 November 2017</p>
-                            </div>
-                        </div>
+                        @endforeach
+                        @endif
                     </div>
 
                     <div class="location-on-map mt-50" id="lomap">
@@ -220,92 +159,95 @@
                 <div class="listing-sidebar">
 
                     <!-- Listing Verify -->
-                    <div class="listing-verify">
-                        <a href="#" class="btn ipv-btn w-100"><i class="fa fa-check pr-3"></i> Verified Listing</a>
+                    @if($establecimento->estado == 'Ativo')
+                        <div class="listing-verify">
+                            <a href="#" class="btn ipv-btn w-100"><i class="fa fa-check pr-3"></i> Verificado</a>
+                        </div>
+                    @else
+                        <div class="listing-verify">
+                            <a href="#" class="btn ipv-btn w-100"><i class="fa fa-check pr-3"></i> Não
+                                Verificado</a>
+                        </div>
+                @endif
+                <!-- Author Widget -->
+                    <div class="author-widget mt-50 d-flex align-items-center">
+                        <img src="{{asset($establecimento->user->imagem)}}" alt="">
+                        <div class="authors-name">
+                            <a href="#">{{$establecimento->user->name}}</a>
+                            <p>Autor</p>
+                        </div>
                     </div>
-
-                    <!-- Book A Table Widget -->
-                    <div class="book-a-table-widget mt-50">
-                        <h6>Book A Table</h6>
-                        <form action="#" method="get">
-                            <select class="custom-select" id="destinations">
-                                <option selected>Who will be arriving</option>
-                                <option value="1">New York</option>
-                                <option value="2">Latvia</option>
-                                <option value="3">Dhaka</option>
-                                <option value="4">Melbourne</option>
-                                <option value="5">London</option>
-                            </select>
-                            <select class="custom-select" id="catagories">
-                                <option selected>Guest 1</option>
-                                <option value="1">Guest 2</option>
-                                <option value="3">Guest 3</option>
-                                <option value="3">Guest 4</option>
-                            </select>
-                            <button type="submit" class="btn ipv-btn bg-white text-dark"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
-                        </form>
-                    </div>
-
                     <!-- Opening Hours Widget -->
                     <div class="opening-hours-widget mt-50">
-                        <h6>Opening Hours</h6>
+                        <h6>Horário de funcionamento</h6>
                         <ul class="opening-hours">
                             <li>
-                                <p>Monday</p>
-                                <p>Closed</p>
+                                <p>Segunda</p>
+                                <p>Fechado</p>
                             </li>
                             <li>
-                                <p>Tuesday</p>
+                                <p>Terça</p>
                                 <p>9 AM - 1 PM</p>
                             </li>
                             <li>
-                                <p>Wednesday</p>
+                                <p>Quarta</p>
                                 <p>9 AM - 1 PM</p>
                             </li>
                             <li>
-                                <p>Thursday</p>
+                                <p>Quinta</p>
                                 <p>9 AM - 1 PM</p>
                             </li>
                             <li>
-                                <p>Friday</p>
+                                <p>Sexta</p>
                                 <p>9 AM - 1 PM</p>
                             </li>
                             <li>
-                                <p>Saturday</p>
+                                <p>Sábado</p>
                                 <p>9 AM - 1 PM</p>
                             </li>
                             <li>
-                                <p>Sunday</p>
+                                <p>Domingo</p>
                                 <p>9 AM - 1 PM</p>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Author Widget -->
-                    <div class="author-widget mt-50 d-flex align-items-center">
-                        <img src="{{asset('img/clients-img/1.jpg')}}" alt="">
-                        <div class="authors-name">
-                            <a href="#">James Smith</a>
-                            <p>The Author</p>
-                        </div>
-                    </div>
-
                     <!-- Contact Form -->
-                    <div class="contact-form contact-form-widget mt-50">
-                        <h6>Contact Business</h6>
+                    <div class="contact-form contact-form-widget mt-50" id="write-review">
+                        <h6>Escreva uma <i>review</i></h6>
                         <form action="#">
                             <div class="row">
                                 <div class="col-12">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name">
+                                    <input type="text" name="titulo" class="form-control" placeholder="Título">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" name="email" class="form-control" placeholder="Email Address">
+                                        <textarea name="descricao" class="form-control" id="Message" cols="30" rows="10"
+                                                  placeholder="Inserir uma descrição"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="message" class="form-control" id="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                    <select class="form-control">
+                                        <option>
+                                            Classificação
+                                        </option>
+                                        <option>
+                                            &#11088 (1)
+                                        </option>
+                                        <option>
+                                            &#11088&#11088 (2)
+                                        </option>
+                                        <option>
+                                            &#11088&#11088&#11088 (3)
+                                        </option>
+                                        <option>
+                                            &#11088&#11088&#11088&#11088 (4)
+                                        </option>
+                                        <option>
+                                            &#11088&#11088&#11088&#11088&#11088 (5)
+                                        </option>
+                                    </select>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn ipv-btn">Send</button>
+                                    <button type="submit" class="btn ipv-btn">Submeter</button>
                                 </div>
                             </div>
                         </form>
@@ -318,4 +260,8 @@
 </section>
 <!-- ***** Single Listing Area End ***** -->
 
-@extends('layouts.footer')
+<!-- Google Maps js -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ1YFNZc08KyARHbS-oIKo-tWMsKJPP8k"></script>
+<script src="{{asset('js/google-map/location-map-active.js')}}"></script>
+
+@include('layouts.footer')

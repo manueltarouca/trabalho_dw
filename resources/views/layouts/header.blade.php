@@ -81,7 +81,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contactos</a>
+                                <a class="nav-link" href="{{ route('contacto') }}">Contactos</a>
                             </li>
                         </ul>
                         <!-- Search btn -->
