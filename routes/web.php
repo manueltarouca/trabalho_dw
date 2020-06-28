@@ -20,6 +20,8 @@ Route::get('/welcome', function () {
 Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('/estabelecimento/{id}', 'IndexController@estabelecimento')->name('estabelecimento');
+Route::post('/estabelecimento/{id}', 'EstabelecimentoController@create_review')->name('create-review');
+Route::post('/results', 'EstabelecimentoController@results')->name('results');
 Route::get('/reviews/{id}', 'IndexController@reviews')->name('reviews');
 Route::get('/contacto', 'IndexController@contacto')->name('contacto');
 

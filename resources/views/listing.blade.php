@@ -10,7 +10,13 @@
                     <div class="map-ratings-review-area d-flex">
                         <a href="#" class="d-flex align-items-center justify-content-center"><img
                                 src="{{asset('img/core-img/map.png')}}" alt=""></a>
-                        <a href="#">{{rand(4*10,5*10)/10}}</a>
+                        <a href="#">
+                            @if($establecimento->reviews->avg('classificacao'))
+                                {{$establecimento->reviews->avg('classificacao')}}
+                            @else
+                                N/A
+                            @endif
+                        </a>
                         <a href="#write-review">Avalie este establecimento</a>
                     </div>
                 </div>
@@ -45,102 +51,42 @@
 
                     <div class="overview-content mt-50" id="overview">
                         <p>{{$establecimento->descricao}}</p>
-                        <!--
-                        <div class="row mt-5">
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Accepts Credit Cards</span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Bike Parking</span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Wireless Internet</span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Reservations</span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Privat Parking</span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Smoking Area</span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Wheelchair Accesible</span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Coupons</span>
-                                </label>
-                            </div>
-                        </div>
-                        -->
                     </div>
                     <div class="listing-reviews-area mt-100" id="review">
                         <h4>reviews</h4>
                         @if($establecimento->reviews->count() == 0)
                             <h6>Ainda não existe nenhuma <i>review</i>, seja o primeiro!</h6>
                         @else
-                        @foreach($establecimento->reviews as $review)
-                            <div class="single-review-area">
-                                <div class="reviewer-meta d-flex align-items-center">
-                                    <img src="{{asset($review->user->imagem)}}" alt="">
-                                    <div class="reviewer-content">
-                                        <div class="review-title-ratings d-flex justify-content-between">
-                                            <h5>“{{$review->titulo}}”</h5>
-                                            <div class="ratings">
-                                                @for ($i = 0; $i < $review->classificacao; $i++)
-                                                    <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
-                                                @endfor
-                                                @for ($i = 0; $i < 5-$review->classificacao; $i++)
-                                                    <img src="{{asset('img/clients-img/star-unfill.png')}}" alt="">
-                                                @endfor
+                            @foreach($establecimento->reviews as $review)
+                                <div class="single-review-area">
+                                    <div class="reviewer-meta d-flex align-items-center">
+                                        <img src="{{asset($review->user->imagem)}}" alt="">
+                                        <div class="reviewer-content">
+                                            <div class="review-title-ratings d-flex justify-content-between">
+                                                <h5>“{{$review->titulo}}”</h5>
+                                                <div class="ratings">
+                                                    @for ($i = 0; $i < $review->classificacao; $i++)
+                                                        <img src="{{asset('img/clients-img/star-fill.png')}}" alt="">
+                                                    @endfor
+                                                    @for ($i = 0; $i < 5-$review->classificacao; $i++)
+                                                        <img src="{{asset('img/clients-img/star-unfill.png')}}" alt="">
+                                                    @endfor
+                                                </div>
                                             </div>
+                                            <p>
+                                                {{$review->descricao}}
+                                                @for ($i = 0; $i < 100; $i++)
+                                                    &nbsp;
+                                                @endfor
+                                            </p>
                                         </div>
-                                        <p>
-                                            {{$review->descricao}}
-                                            @for ($i = 0; $i < 100; $i++)
-                                                &nbsp;
-                                            @endfor
-                                        </p>
+                                    </div>
+                                    <div class="reviewer-name">
+                                        <h6>{{$review->user->name}}</h6>
+                                        <p>{{$review->created_at}}</p>
                                     </div>
                                 </div>
-                                <div class="reviewer-name">
-                                    <h6>{{$review->user->name}}</h6>
-                                    <p>{{$review->created_at}}</p>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
                         @endif
                     </div>
 
@@ -215,42 +161,49 @@
                     <!-- Contact Form -->
                     <div class="contact-form contact-form-widget mt-50" id="write-review">
                         <h6>Escreva uma <i>review</i></h6>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-12">
-                                    <input type="text" name="titulo" class="form-control" placeholder="Título">
-                                </div>
-                                <div class="col-12">
-                                        <textarea name="descricao" class="form-control" id="Message" cols="30" rows="10"
+                        @auth()
+                            <form action="{{route('create-review',$establecimento->id)}}" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-12">
+                                        <input required type="text" name="titulo" class="form-control"
+                                               placeholder="Título">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea required name="descricao" class="form-control" id="Message" cols="30"
+                                                  rows="10"
                                                   placeholder="Inserir uma descrição"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <select required name="classificacao" class="form-control">
+                                            <option>
+                                                Classificação
+                                            </option>
+                                            <option value="1">
+                                                &#11088 (1)
+                                            </option>
+                                            <option value="2">
+                                                &#11088&#11088 (2)
+                                            </option>
+                                            <option value="3">
+                                                &#11088&#11088&#11088 (3)
+                                            </option>
+                                            <option value="4">
+                                                &#11088&#11088&#11088&#11088 (4)
+                                            </option>
+                                            <option value="5">
+                                                &#11088&#11088&#11088&#11088&#11088 (5)
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn ipv-btn">Submeter</button>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <select class="form-control">
-                                        <option>
-                                            Classificação
-                                        </option>
-                                        <option>
-                                            &#11088 (1)
-                                        </option>
-                                        <option>
-                                            &#11088&#11088 (2)
-                                        </option>
-                                        <option>
-                                            &#11088&#11088&#11088 (3)
-                                        </option>
-                                        <option>
-                                            &#11088&#11088&#11088&#11088 (4)
-                                        </option>
-                                        <option>
-                                            &#11088&#11088&#11088&#11088&#11088 (5)
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn ipv-btn">Submeter</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        @else
+                            <p>Autentique-se para escrever reviews.</p>
+                        @endauth
                     </div>
 
                 </div>

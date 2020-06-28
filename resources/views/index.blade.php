@@ -25,16 +25,17 @@
                         <div class="tab-pane fade show active" id="nav-places" role="tabpanel"
                              aria-labelledby="nav-places-tab">
                             <h6>O que procura?</h6>
-                            <form action="#" method="get">
-                                <select class="custom-select">
-                                    <option selected>Todas as Categorias</option>
+                            <form action="{{route('results')}}" method="post">
+                                @csrf
+                                <select name="categoria" class="custom-select">
+                                    <option value="0" selected>Todas as Categorias</option>
                                     <option value="1">Hotéis</option>
                                     <option value="2">Restaurantes</option>
                                     <option value="3">Lojas</option>
-                                    <option value="3">Beleza & Spa</option>
-                                    <option value="3">Cinema</option>
+                                    <option value="4">Beleza & Spa</option>
+                                    <option value="5">Cinema</option>
                                 </select>
-                                <input class="custom-input" style="width: 60%;" type="search" name="caviarSearch"
+                                <input class="custom-input" style="width: 60%;" type="search" name="nome"
                                        id="search"
                                        placeholder="Procure pelo nome do establecimento">
                                 <button type="submit" class="btn ipv-btn"><i class="fa fa-search pr-2"
@@ -270,7 +271,7 @@
                                 <p>Lisboa</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="{{route('estabelecimento',6)}}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -287,7 +288,7 @@
                                 <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="{{route('estabelecimento',7)}}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -304,7 +305,7 @@
                                 <p>Porto</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="{{route('estabelecimento',8)}}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -321,7 +322,7 @@
                                 <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="{{route('estabelecimento',9)}}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -338,7 +339,7 @@
                                 <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="{{route('estabelecimento',10)}}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -371,8 +372,14 @@
                             <img src="{{asset($restaurante->imagem)}}" alt="">
                             <!-- Rating & Map Area -->
                             <div class="ratings-map-area d-flex">
-                                <a href="#">{{rand(4*10,5*10)/10}}</a>
-                                <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
+                                <a href="{{route('estabelecimento',$restaurante->id)}}">
+                                    @if($restaurante->reviews->avg('classificacao'))
+                                        {{round($restaurante->reviews->avg('classificacao'),1)}}
+                                    @else
+                                        N/A
+                                    @endif
+                                </a>
+                                <a href="{{route('estabelecimento',$restaurante->id)}}"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
                             </div>
                             <div class="feature-content d-flex align-items-center justify-content-between">
                                 <div class="feature-title">
@@ -380,7 +387,8 @@
                                     <p>{{$restaurante->cidade_nome->nome}}</p>
                                 </div>
                                 <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                    <a href="{{route('estabelecimento',$restaurante->id)}}"><i class="fa fa-heart-o"
+                                                                                               aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -391,148 +399,6 @@
     </div>
 </section>
 <!-- ***** Features Restaurant Area End ***** -->
-
-
-<!-- ***** Features Events Area Start ***** -->
-<!--
-<section class="ipv-features-events-area bg-img bg-overlay-9 section-padding-100-50"
-         style="background-image: url({{asset("img/bg-img/hero-3.jpg")}})">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center">
-                    <span></span>
-                    <h4>Featured events</h4>
-                    <p>Editor’s pick</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                     data-wow-delay="0.2s">
-                    <div class="feature-events-thumb">
-                        <img src="{{asset("img/bg-img/event-1.jpg")}}" alt="">
-                        <div class="date-map-area d-flex">
-                            <a href="#">26 Nov</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="feature-events-content">
-                        <h5>Jazz Concert</h5>
-                        <h6>Manhathan</h6>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                    </div>
-                    <div class="feature-events-details-btn">
-                        <a href="#">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                     data-wow-delay="0.3s">
-                    <div class="feature-events-thumb">
-                        <img src="{{asset("img/bg-img/event-2.jpg")}}" alt="">
-                        <div class="date-map-area d-flex">
-                            <a href="#">26 Nov</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="feature-events-content">
-                        <h5>DeeJay in the house</h5>
-                        <h6>Manhathan</h6>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                    </div>
-                    <div class="feature-events-details-btn">
-                        <a href="#">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                     data-wow-delay="0.4s">
-                    <div class="feature-events-thumb">
-                        <img src="{{asset("img/bg-img/event-3.jpg")}}" alt="">
-                        <div class="date-map-area d-flex">
-                            <a href="#">26 Nov</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="feature-events-content">
-                        <h5>Theatre Night outside</h5>
-                        <h6>Manhathan</h6>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                    </div>
-                    <div class="feature-events-details-btn">
-                        <a href="#">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                     data-wow-delay="0.5s">
-                    <div class="feature-events-thumb">
-                        <img src="{{asset("img/bg-img/event-4.jpg")}}" alt="">
-                        <div class="date-map-area d-flex">
-                            <a href="#">26 Nov</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="feature-events-content">
-                        <h5>Wine tasting</h5>
-                        <h6>Manhathan</h6>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                    </div>
-                    <div class="feature-events-details-btn">
-                        <a href="#">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                     data-wow-delay="0.6s">
-                    <div class="feature-events-thumb">
-                        <img src="{{asset("img/bg-img/event-5.jpg")}}" alt="">
-                        <div class="date-map-area d-flex">
-                            <a href="#">26 Nov</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="feature-events-content">
-                        <h5>New Moon Party</h5>
-                        <h6>Manhathan</h6>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                    </div>
-                    <div class="feature-events-details-btn">
-                        <a href="#">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-                     data-wow-delay="0.7s">
-                    <div class="feature-events-thumb">
-                        <img src="{{asset("img/bg-img/event-6.jpg")}}" alt="">
-                        <div class="date-map-area d-flex">
-                            <a href="#">26 Nov</a>
-                            <a href="#"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="feature-events-content">
-                        <h5>Happy hour at pub</h5>
-                        <h6>Manhathan</h6>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                    </div>
-                    <div class="feature-events-details-btn">
-                        <a href="#">+</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- ***** Features Events Area End ***** -->
 
 <!-- ***** Clients Area Start ***** -->
 <div class="ipv-clients-area section-padding-100" style="background-image: linear-gradient(#341a79, white);">

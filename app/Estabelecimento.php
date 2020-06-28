@@ -22,6 +22,15 @@ class Estabelecimento extends Model
         return $this->hasMany('App\Review','establecimento');
     }
 
+    public function avg_classificacao(){
+        $reviews = $this->hasMany('App\Review','establecimento');
+        $total = 0;
+        foreach ($reviews as $review){
+            $total += $review->classificacao;
+        }
+        return $total;
+    }
+
     public function user()
     {
         return $this->belongsTo('App\User','owner');
