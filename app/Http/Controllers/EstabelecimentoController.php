@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
+use App\cidade;
 use App\Estabelecimento;
 use App\Review;
 use Illuminate\Http\Request;
@@ -40,5 +42,13 @@ class EstabelecimentoController extends Controller
             'spas' => Estabelecimento::query()->where('categoria','=',4)->get(),
             'cinemas' => Estabelecimento::query()->where('categoria','=',5)->get()
             ]);
+    }
+
+    public function submit(){
+        return view('submit', ['cidades'=>cidade::all(),'categorias'=>Categoria::all()]);
+    }
+
+    public function submit_save(Request $request){
+
     }
 }

@@ -22,6 +22,8 @@ Route::get('/', 'IndexController@index')->name('index');
 Route::get('/estabelecimento/{id}', 'IndexController@estabelecimento')->name('estabelecimento');
 Route::post('/estabelecimento/{id}', 'EstabelecimentoController@create_review')->name('create-review');
 Route::get('/explorar', 'EstabelecimentoController@explore')->name('explore');
+Route::get('/submit','EstabelecimentoController@submit')->name('submit');
+Route::post('/submit','EstabelecimentoController@submit_save')->name('submit-save');
 Route::post('/results', 'EstabelecimentoController@results')->name('results');
 Route::get('/reviews/{id}', 'IndexController@reviews')->name('reviews');
 Route::get('/contacto', 'IndexController@contacto')->name('contacto');

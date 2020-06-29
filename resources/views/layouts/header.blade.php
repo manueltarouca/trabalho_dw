@@ -99,7 +99,7 @@
                                 </div>
                             </li>
                             <div class="ipv-add-listings-btn">
-                                <a href="#" class="btn ipv-btn">+ Adicionar Establecimento</a>
+                                <a href="{{route('submit')}}" class="btn ipv-btn">+ Adicionar Estabelecimento</a>
                             </div>
                         @else
                         <!-- Signin btn -->
