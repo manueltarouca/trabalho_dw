@@ -12,7 +12,7 @@
                                 src="{{asset('img/core-img/map.png')}}" alt=""></a>
                         <a href="#">
                             @if($establecimento->reviews->avg('classificacao'))
-                                {{$establecimento->reviews->avg('classificacao')}}
+                                {{round($establecimento->reviews->avg('classificacao'),2)}}
                             @else
                                 N/A
                             @endif
@@ -44,7 +44,7 @@
                             <ul id="listingNav">
                                 <li class="active"><a href="#overview">Descrição</a></li>
                                 <li><a href="#review">Reviews</a></li>
-                                <li><a href="#lomap">Localização no map</a></li>
+                                <li><a href="#lomap">Localização no mapa</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="location-on-map mt-50" id="lomap">
-                        <h4>Location on map</h4>
+                        <h4>Localização no mapa</h4>
                         <div class="location-map">
                             <div id="locationMap"></div>
                         </div>

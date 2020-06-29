@@ -32,4 +32,13 @@ class EstabelecimentoController extends Controller
             return view('results', ["establecimentos" => Estabelecimento::query()->where("nome", "like", "%{$nome}%")->where('categoria', '=', $categoria)->get()]);
         }
     }
+
+    public function explore(){
+        return view('explore',['hoteis' => Estabelecimento::query()->where('categoria','=',1)->get(),
+            'restaurantes' => Estabelecimento::query()->where('categoria','=',2)->get(),
+            'lojas' => Estabelecimento::query()->where('categoria','=',3)->get(),
+            'spas' => Estabelecimento::query()->where('categoria','=',4)->get(),
+            'cinemas' => Estabelecimento::query()->where('categoria','=',5)->get()
+            ]);
+    }
 }

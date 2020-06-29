@@ -36,8 +36,12 @@
                 <div class="search-close-btn" id="closeBtn">
                     <i class="pe-7s-close-circle" aria-hidden="true"></i>
                 </div>
-                <form action="#" method="get">
-                    <input type="search" name="caviarSearch" id="search"
+                <form action="{{route('results')}}" method="post">
+                    @csrf
+                    <select name="categoria" style="display: none;">
+                        <option value="0" selected>Todas as Categorias</option>
+                    </select>
+                    <input type="search" name="nome" id="search"
                            placeholder="Pesquise por qualquer coisa...">
                     <input type="submit" class="d-none" value="submit">
                 </form>
@@ -65,20 +69,8 @@
                                         class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('index')}}">Explorar <span
+                                <a class="nav-link" href="{{route('explore')}}">Explorar <span
                                         class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown<i
-                                        class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                    <a class="dropdown-item" href="index.html">Home</a>
-                                    <a class="dropdown-item" href="explore.html">Explore</a>
-                                    <a class="dropdown-item" href="listing.html">Listing</a>
-                                    <a class="dropdown-item" href="single-listing.html">Single Listing</a>
-                                    <a class="dropdown-item" href="contact.html">Contact</a>
-                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('contacto') }}">Contactos</a>
