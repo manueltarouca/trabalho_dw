@@ -203,7 +203,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Porto</a>
-                            @if($cidades)
+                            @if(count($cidades)>0)
                                 <a href="#">{{$cidades[1]->estabelecimentos->count()}} establecimentos</a>
                             @else
                                 <a href="#">{{rand(500,1000)}} establecimentos</a>
@@ -221,7 +221,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Lisboa</a>
-                            @if($cidades)
+                            @if(count($cidades)>0)
                             <a href="#">{{$cidades[2]->estabelecimentos->count()}} establecimentos</a>
                             @else
                                 <a href="#">{{rand(250,500)}} establecimentos</a>
