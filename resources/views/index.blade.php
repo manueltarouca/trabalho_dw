@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('layouts.header',['home'=> true,'explorar'=>false,'contact'=>false])
 
 <!-- ***** Welcome Area Start ***** -->
 <section class="ipv-welcome-area bg-img bg-overlay"
@@ -203,7 +203,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Porto</a>
-                            <a href="#">{{rand(500,1000)}} establecimentos</a>
+                            <a href="#">{{$cidades[1]->estabelecimentos->count()}} establecimentos</a>
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -217,7 +217,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Lisboa</a>
-                            <a href="#">{{rand(250,500)}} establecimentos</a>
+                            <a href="#">{{$cidades[2]->estabelecimentos->count()}} establecimentos</a>
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -229,7 +229,7 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Viseu</a>
-                            <a href="#">{{rand(0,250)}} establecimentos</a>
+                            <a href="#">{{$cidades[0]->estabelecimentos->count()}} establecimentos</a>
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>

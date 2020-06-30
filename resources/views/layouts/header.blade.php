@@ -64,17 +64,29 @@
                     <!-- Nav -->
                     <div class="collapse navbar-collapse" id="ipvNav">
                         <ul class="navbar-nav mr-auto" id="ipvMenu">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{route('index')}}">Home <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('explore')}}">Explorar <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('contacto') }}">Contactos</a>
-                            </li>
+                            @if($home ?? '')
+                                <li class="nav-item active">
+                            @else
+                                <li class="nav-item">
+                            @endif
+                                    <a class="nav-link" href="{{route('index')}}">Home <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                @if($explorar ?? '')
+                                    <li class="nav-item active">
+                                @else
+                                    <li class="nav-item">
+                                        @endif
+                                    <a class="nav-link" href="{{route('explore')}}">Explorar <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                    @if($contact ?? '')
+                                        <li class="nav-item active">
+                                    @else
+                                        <li class="nav-item">
+                                            @endif
+                                    <a class="nav-link" href="{{ route('contacto') }}">Contactos</a>
+                                </li>
                         </ul>
                         <!-- Search btn -->
                         <div class="ipv-search-btn">

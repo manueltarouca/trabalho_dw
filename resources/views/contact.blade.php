@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('layouts.header',['home'=> false,'explorar'=>false,'contact'=>true])
 <!-- ***** Breadcumb Area Start ***** -->
 <div class="breadcumb-area bg-img bg-overlay" style="background-image: url({{asset('img/bg-img/hero-1.jpg')}})">
 </div>
