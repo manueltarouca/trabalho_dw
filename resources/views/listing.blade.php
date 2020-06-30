@@ -17,7 +17,7 @@
                                 N/A
                             @endif
                         </a>
-                        <a href="#write-review">Avalie este establecimento</a>
+                        <a href="#write-review">Sentiu-se seguro?</a>
                     </div>
                 </div>
             </div>

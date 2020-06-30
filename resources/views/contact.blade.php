@@ -32,7 +32,7 @@
                 <div class="single-contact-info">
                     <h6><i class="fa fa-user" aria-hidden="true"></i> David Mota</h6>
                     <h6><i class="fa fa-envelope-o" aria-hidden="true"></i> estgv18580@alunos.estgv.ipv.pt</h6>
-                    <h6><i class="fa fa-phone" aria-hidden="true"></i> +365 9XXXXXXXX</h6>
+                    <h6><i class="fa fa-phone" aria-hidden="true"></i> +365 939650600</h6>
                 </div>
                 <div class="single-contact-info">
                     <h6><i class="fa fa-user" aria-hidden="true"></i> Manuel Augusto Tarouca Martins</h6>
