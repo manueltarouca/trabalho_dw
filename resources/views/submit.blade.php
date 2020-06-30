@@ -26,7 +26,8 @@
                         <div class="contact-form-title">
                             <h6>Novo estabelecimento</h6>
                         </div>
-                        <form action="{{route('submit')}}" metod="POST">
+                        <form action="{{route('submit-save')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <input required type="text" name="nome" class="form-control" placeholder="Nome">
@@ -52,12 +53,12 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea required name="descricao" class="form-control" id="Descrição" cols="30" rows="10"
-                                              placeholder="Mensagem"></textarea>
+                                    <textarea required name="descricao" class="form-control" id="Descrição" cols="30"
+                                              rows="10"
+                                              placeholder="Descrição..."></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <input required type="file" name="localizacao" class="form-control"
-                                           placeholder="Localização">
+                                    <input required type="file" name="imagem" class="form-control">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn ipv-btn">Submeter</button>

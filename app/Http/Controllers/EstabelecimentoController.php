@@ -49,6 +49,18 @@ class EstabelecimentoController extends Controller
     }
 
     public function submit_save(Request $request){
-
+        $establecimento = new Estabelecimento;
+        $establecimento->nome = $request->input('nome');
+        $establecimento->descricao = $request->input('descricao');
+        $establecimento->localizacao = $request->input('localizacao');
+        $establecimento->categoria = (int)$request->input('categoria');
+        $establecimento->cidade = (int) $request->input('cidade');
+        $establecimento->estado = 'Ativo';
+        $establecimento->owner = Auth::id();
+        $upload = $request->file('imagem')->store('/user_uploaded','public');
+        $establecimento->imagem = asset('uploads/'.$upload);
+        $establecimento->save();
+        return redirect()->route('estabelecimento',$establecimento->id);
+        //return dd($upload);
     }
 }
