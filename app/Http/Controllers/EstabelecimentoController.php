@@ -63,4 +63,9 @@ class EstabelecimentoController extends Controller
         return redirect()->route('estabelecimento',$establecimento->id);
         //return dd($upload);
     }
+
+    public function ajax_search($q){
+        $result = Estabelecimento::query()->where("nome","like","%{$q}%")->first();
+        return $result ? "Quer dizer " . $result->nome . "?" : 'Sem resultados...';
+    }
 }

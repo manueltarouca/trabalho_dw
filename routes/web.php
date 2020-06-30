@@ -28,6 +28,8 @@ Route::post('/results', 'EstabelecimentoController@results')->name('results');
 Route::get('/reviews/{id}', 'IndexController@reviews')->name('reviews');
 Route::get('/contacto', 'IndexController@contacto')->name('contacto');
 
+Route::get('/search/{query?}','EstabelecimentoController@ajax_search')->name('search');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

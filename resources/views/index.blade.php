@@ -24,7 +24,7 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-places" role="tabpanel"
                              aria-labelledby="nav-places-tab">
-                            <h6>O que procura?</h6>
+                            <h6 id="txtHint">O que procura?</h6>
                             <form action="{{route('results')}}" method="post">
                                 @csrf
                                 <select name="categoria" class="custom-select">
@@ -37,7 +37,7 @@
                                 </select>
                                 <input class="custom-input" style="width: 60%;" type="search" name="nome"
                                        id="search"
-                                       placeholder="Procure pelo nome do establecimento">
+                                       placeholder="Procure pelo nome do establecimento" onkeyup="showHint(this.value)">
                                 <button type="submit" class="btn ipv-btn"><i class="fa fa-search pr-2"
                                                                              aria-hidden="true"></i> Pesquisar
                                 </button>
@@ -339,7 +339,8 @@
                                 <p>Viseu</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="{{route('estabelecimento',10)}}"><i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <a href="{{route('estabelecimento',10)}}"><i class="fa fa-star-o"
+                                                                             aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -379,7 +380,8 @@
                                         N/A
                                     @endif
                                 </a>
-                                <a href="{{route('estabelecimento',$restaurante->id)}}"><img src="{{asset("img/core-img/map.png")}}" alt=""></a>
+                                <a href="{{route('estabelecimento',$restaurante->id)}}"><img
+                                        src="{{asset("img/core-img/map.png")}}" alt=""></a>
                             </div>
                             <div class="feature-content d-flex align-items-center justify-content-between">
                                 <div class="feature-title">
@@ -417,5 +419,24 @@
     </div>
 </div>
 <!-- ***** Clients Area End ***** -->
+
+<!-- Ajax search -->
+<script>
+    function showHint(str) {
+        var xhttp;
+        if (str.length == 0) {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "{{route('search')}}/" + str, true);
+        xhttp.send();
+    }
+</script>
 
 @include('layouts.footer')
