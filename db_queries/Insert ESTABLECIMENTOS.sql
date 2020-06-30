@@ -1,0 +1,10 @@
+INSERT INTO Estabelecimentos (created_at, updated_at, nome, descricao, localizacao, estado, imagem, owner, categoria, cidade)
+VALUES (NOW(),NOW(),"Four Seasons Hotel Ritz Lisbon","Located in the heart of Lisbon, our historic Hotel wears the cultural heart and soul of Portugal on its sleeve. Inside, art-deco sensibilities mingle with an updated Louis XVI style, and a collection of important contemporary local artwork fills our halls.", "Rua Rodrigo da Fonseca 88 1070-243 Lisboa","Ativo","img/bg-img/feature-1.jpg",1,1,3);
+INSERT INTO Estabelecimentos (created_at, updated_at, nome, descricao, localizacao, estado, imagem, owner, categoria, cidade)
+VALUES (NOW(),NOW(),"Santa Luzia","Fundado em 1978, o Santa Luzia consta já na história da cidade de Viseu, durante trinta e dois anos o restaurante construiu o seu padrão de qualidade e criou laços de amizade por todo o país.", "Estrada Nacional nº2 3530-239 Campo, Viseu, Portugal","Ativo","img/bg-img/feature-2.jpg",1,2,2);
+INSERT INTO Estabelecimentos (created_at, updated_at, nome, descricao, localizacao, estado, imagem, owner, categoria, cidade)
+VALUES (NOW(),NOW(),"Livraria Bertrand","A maior e mais antiga rede de livrarias portuguesa, com mais de 60 livrarias em todo o país, entre elas a mais antiga do mundo, a Livraria Bertrand no Chiado.", "Rua Campeões Europeus 28/198 4350-414 PORTO","Ativo","img/bg-img/feature-3.jpg",1,3,2);
+INSERT INTO Estabelecimentos (created_at, updated_at, nome, descricao, localizacao, estado, imagem, owner, categoria, cidade)
+VALUES (NOW(),NOW(),"Six Senses Douro Valley","Six Senses Douro Valley is set in Portugal’s enchanting UNESCO World Heritage area.", "Quinta De Vale Abraão, Samodães - Lamego 5100-758 Lamego","Ativo","img/bg-img/feature-4.jpg",1,4,1);
+INSERT INTO Estabelecimentos (created_at, updated_at, nome, descricao, localizacao, estado, imagem, owner, categoria, cidade)
+VALUES (NOW(),NOW(),"Cinemas NOS Palácio do Gelo","Com o Cartão NOS na compra de um bilhete oferta de outro ou um menu pequeno de pipocas e bebida", "Quinta da Alagoa 3500-606 Viseu","Ativo","img/bg-img/feature-5.jpg",1,3,2);
