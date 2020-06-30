@@ -203,7 +203,11 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Porto</a>
-                            <a href="#">{{$cidades[1]->estabelecimentos->count() ?? ''}} establecimentos</a>
+                            @if($cidades)
+                                <a href="#">{{$cidades[1]->estabelecimentos->count()}} establecimentos</a>
+                            @else
+                                <a href="#">{{rand(500,1000)}} establecimentos</a>
+                            @endif
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -217,7 +221,11 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Lisboa</a>
-                            <a href="#">{{$cidades[2]->estabelecimentos->count() ?? ''}} establecimentos</a>
+                            @if($cidades)
+                            <a href="#">{{$cidades[2]->estabelecimentos->count()}} establecimentos</a>
+                            @else
+                                <a href="#">{{rand(250,500)}} establecimentos</a>
+                            @endif
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
@@ -229,7 +237,11 @@
                     <div class="editors-pick-info">
                         <div class="places-total-destinations d-flex">
                             <a href="#">Viseu</a>
-                            <a href="#">{{$cidades[0]->estabelecimentos->count()}} establecimentos</a>
+                            @if($cidades)
+                                <a href="#">{{$cidades[0]->estabelecimentos->count()}} establecimentos</a>
+                            @else
+                                <a href="#">{{rand(1,250)}} establecimentos</a>
+                            @endif
                         </div>
                         <div class="add-more">
                             <a href="#">+</a>
